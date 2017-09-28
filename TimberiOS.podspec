@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TimberiOS'
-  s.version          = '1.0.0'
+  s.version          = '1.2.0'
   s.summary          = 'TimberiOS is here to help you log iOS record direclty in Timber'
 
 # This description is used to generate tags and improve search results.
@@ -17,7 +17,10 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = 'That is a long description'
+s.description      = <<-DESC
+
+                This pod is here to help you with Timber.io // Check the README.md in order to learn more about TimberiOS and Timber.io
+                        DESC
 
   s.homepage         = 'https://github.com/charvoa/TimberiOS'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'

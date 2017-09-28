@@ -77,7 +77,7 @@ $ pod install
       case notice = "notice"
       case warn = "warn"
       case error = "error"
-      case criticial = "critical"
+      case critical = "critical"
       case alert = "alert"
       case emergency = "emergency"
   }
@@ -110,9 +110,26 @@ $ pod install
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
       // Override point for customization after application launch.
   
-      TimberLogger.initialize(with:"YOUR_TIMBER_API_KEY")
+      TimberLogger.initialize(with: "YOUR_TIMBER_API_KEY", internalLogLevel: .InternalLogLevel)
       return true
   }
+  
+  ```
+  
+  ### InternalLogLevel
+  
+  This enum is here to help your console dealing with logs. It will only print logs when the LogLevel is >= than the InternalLogLevel
+  
+  ```swift
+  public enum InternalLogLevel: String {
+      case debugInternal
+      case warnInternal
+      case criticalInternal
+  }
+  
+  private static let debugLevelArray: [LogLevel] = [.debug, .info, .notice, .warn, .error, .critical, .alert, .emergency]
+  private static let warnLevelArray: [LogLevel]  = [.warn, .error, .critical, .alert, .emergency]
+  private static let criticalLevelArray: [LogLevel]  = [.critical, .alert, .emergency]
   
   ```
   
@@ -133,6 +150,10 @@ $ pod install
  ## Author
 
 Nicolas Charvoz, charvoz.nicolas@gmail.com
+
+## Timber.io
+
+You can create your account and get your own API key on : [Timber.io](https://timber.io/)
 
 ## License
 
