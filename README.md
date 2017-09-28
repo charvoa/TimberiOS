@@ -27,7 +27,7 @@ pod 'TimberiOS'
 - [X] severity
 - [X] message
 - [X] tags
-- [X] runtime (`application - class-name`)
+- [X] runtime (`application - class-name`)
 - [ ] time_ms
 - [ ] context
 - [ ] organization
