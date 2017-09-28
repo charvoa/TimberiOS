@@ -22,7 +22,7 @@ $ gem install cocoapods
 
 > CocoaPods 1.1+ is required to build TimberiOS.
 
-To integrate Alamofire into your Xcode project using CocoaPods, specify it in your `Podfile`:
+To integrate TimberiOS into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
@@ -81,6 +81,35 @@ $ pod install
       case alert = "alert"
       case emergency = "emergency"
   }
+  
+  ```
+  
+  ### Logging type
+  
+  The type defined here are the ones defined in Timber
+  
+  ```swift
+  
+  public enum LogType: String {
+      case frame = "/frames"
+      case alert = "/alert"
+  }
+  
+  ```
+  
+  ### Initialization
+  
+  `AppDelegate.swift :`
+  
+  ```swift
+  
+      func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+          // Override point for customization after application launch.
+  
+          TimberLogger.initialize(with:"YOUR_TIMBER_API_KEY")
+  
+          return true
+      }
   
   ```
   
