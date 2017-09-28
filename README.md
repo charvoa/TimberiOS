@@ -97,22 +97,38 @@ $ pod install
   
   ```
   
+  ### Severity
+  
+  The severity is the level of severity of the log. As defined in Timber, it must be between 0 and 7. The app will crash if the severity is higher or lower. 
+  
   ### Initialization
   
   `AppDelegate.swift :`
   
   ```swift
   
-      func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-          // Override point for customization after application launch.
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+      // Override point for customization after application launch.
   
-          TimberLogger.initialize(with:"YOUR_TIMBER_API_KEY")
-  
-          return true
-      }
+      TimberLogger.initialize(with:"YOUR_TIMBER_API_KEY")
+      return true
+  }
   
   ```
   
+  ### Logging
+  
+  `AppDelegate.swift :`
+  
+  ```swift
+  
+  override func viewDidLoad() {
+      super.viewDidLoad()
+      TimberLogger.shared.log(type: .frame, level: .info, severity:2, tags:[], message: "viewDidLoad")
+      // Do any additional setup after loading the view, typically from a nib.
+  }
+  
+  ```
   
  ## Author
 
