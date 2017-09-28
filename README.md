@@ -10,15 +10,34 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
-
 ## Installation
 
-TimberiOS is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+### CocoaPods
+
+[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
+
+```bash
+$ gem install cocoapods
+```
+
+> CocoaPods 1.1+ is required to build TimberiOS.
+
+To integrate Alamofire into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '9.0'
+use_frameworks!
+
+target '<Your Target Name>' do
 pod 'TimberiOS'
+end
+```
+
+Then, run the following command:
+
+```bash
+$ pod install
 ```
 
 ## Logged Properties
@@ -42,7 +61,30 @@ pod 'TimberiOS'
 - [ ] event
 - [ ] custom
 - [ ] error
-....
+- [ ] More ...
+
+  ## Usage
+  
+  ### Logging level
+  
+  The level defined here are the ones defined in Timber
+  
+  ```swift
+  
+  public enum LogLevel: String {
+      case debug = "debug"
+      case info = "info"
+      case notice = "notice"
+      case warn = "warn"
+      case error = "error"
+      case criticial = "critical"
+      case alert = "alert"
+      case emergency = "emergency"
+  }
+  
+  ```
+  
+  
  ## Author
 
 Nicolas Charvoz, charvoz.nicolas@gmail.com

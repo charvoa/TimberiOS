@@ -14,7 +14,6 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		611BE3931F7D1FD600EECF9C /* Logo-TimberiOS-Cocoapod.png in Resources */ = {isa = PBXBuildFile; fileRef = 611BE3921F7D1FD500EECF9C /* Logo-TimberiOS-Cocoapod.png */; };
 		9FBE82FDB8166D129E3071CD /* Pods_TimberiOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0DA6FFBA05443ACE129D1B /* Pods_TimberiOS_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +41,6 @@
 		607FACE51AFB9204008FA782 /* TimberiOS_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimberiOS_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		611BE3921F7D1FD500EECF9C /* Logo-TimberiOS-Cocoapod.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo-TimberiOS-Cocoapod.png"; sourceTree = "<group>"; };
 		8EA51D85E3E5BFCD984F0A1A /* Pods_TimberiOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimberiOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EE0688D9279B1694176114D /* Pods-TimberiOS_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimberiOS_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimberiOS_Tests/Pods-TimberiOS_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD0DA6FFBA05443ACE129D1B /* Pods_TimberiOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimberiOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,7 +134,6 @@
 			children = (
 				E6903565BBEF54ECFE18D936 /* TimberiOS.podspec */,
 				019C2414B5745A2852027BEF /* README.md */,
-				611BE3921F7D1FD500EECF9C /* Logo-TimberiOS-Cocoapod.png */,
 				3B14C8A0D540A5DB4FBFBA89 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
@@ -256,7 +253,6 @@
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
-				611BE3931F7D1FD600EECF9C /* Logo-TimberiOS-Cocoapod.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
