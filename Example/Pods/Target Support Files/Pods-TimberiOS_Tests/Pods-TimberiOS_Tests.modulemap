@@ -1,0 +1,6 @@
+framework module Pods_TimberiOS_Tests {
+  umbrella header "Pods-TimberiOS_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

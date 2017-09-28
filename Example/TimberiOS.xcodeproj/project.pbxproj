@@ -28,8 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		019C2414B5745A2852027BEF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		3B14C8A0D540A5DB4FBFBA89 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		019C2414B5745A2852027BEF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		3B14C8A0D540A5DB4FBFBA89 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		4FE03FCF1FB749747467C7E3 /* Pods-TimberiOS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimberiOS_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimberiOS_Tests/Pods-TimberiOS_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* TimberiOS_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimberiOS_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 		AD0DA6FFBA05443ACE129D1B /* Pods_TimberiOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimberiOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B895EAAD5C52A96C2D7BD021 /* Pods-TimberiOS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimberiOS_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimberiOS_Example/Pods-TimberiOS_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C36C54CF83D78D55A40C5F89 /* Pods-TimberiOS_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimberiOS_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimberiOS_Example/Pods-TimberiOS_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		E6903565BBEF54ECFE18D936 /* TimberiOS.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = TimberiOS.podspec; path = ../TimberiOS.podspec; sourceTree = "<group>"; };
+		E6903565BBEF54ECFE18D936 /* TimberiOS.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = TimberiOS.podspec; path = ../TimberiOS.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,10 +215,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = EBE4G3TMB3;
 						LastSwiftMigration = 0820;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = EBE4G3TMB3;
 						LastSwiftMigration = 0820;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -271,10 +273,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TimberiOS_Example/Pods-TimberiOS_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/TimberiOS/TimberiOS.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TimberiOS.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,6 +518,7 @@
 			baseConfigurationReference = C36C54CF83D78D55A40C5F89 /* Pods-TimberiOS_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = EBE4G3TMB3;
 				INFOPLIST_FILE = TimberiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -528,6 +533,7 @@
 			baseConfigurationReference = B895EAAD5C52A96C2D7BD021 /* Pods-TimberiOS_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = EBE4G3TMB3;
 				INFOPLIST_FILE = TimberiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -541,6 +547,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8EE0688D9279B1694176114D /* Pods-TimberiOS_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = EBE4G3TMB3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -561,6 +568,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4FE03FCF1FB749747467C7E3 /* Pods-TimberiOS_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = EBE4G3TMB3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

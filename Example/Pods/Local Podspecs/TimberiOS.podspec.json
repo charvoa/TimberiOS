@@ -1,0 +1,27 @@
+{
+  "name": "TimberiOS",
+  "version": "0.1.0",
+  "summary": "A short description of TimberiOS.",
+  "description": "That is a long description",
+  "homepage": "https://github.com/charvoa/TimberiOS",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "charvoa": "nicolas.charvoz@epitech.eu"
+  },
+  "source": {
+    "git": "https://github.com/charvoa/TimberiOS.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "TimberiOS/Classes/**/*",
+  "dependencies": {
+    "Alamofire": [
+
+    ]
+  }
+}

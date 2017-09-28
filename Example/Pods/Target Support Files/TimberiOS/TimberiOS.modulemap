@@ -1,0 +1,6 @@
+framework module TimberiOS {
+  umbrella header "TimberiOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

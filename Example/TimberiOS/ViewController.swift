@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import TimberiOS
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        TimberLogger.shared.log(type: .frame, level: .info, severity:2, tags:[], message: "This is my very first log")
         // Do any additional setup after loading the view, typically from a nib.
     }
 
