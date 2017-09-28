@@ -122,7 +122,8 @@ open class TimberLogger: NSObject {
         
         if (TimberLogger.shared.internalLogLevelArray?.contains(level))! {
             let emoji:String! = TimberLogger.logLevelEmoji[level]
-            print(emoji + " \(params) ")
+            let line: String = "\n--------------------\n"
+            print(line + emoji + "\n" + " \(params as AnyObject)" + line)
         }
         
         NetworkManager.shared.request(apiToken: self.apiToken!, endpoint: type.rawValue, method: .post, params: params) { (response) in
