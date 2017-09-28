@@ -1,3 +1,4 @@
+![alt text](https://github.com/charvoa/TimberiOS/blob/master/Logo-TimberiOS-Cocoapod.png?raw=true)
 # TimberiOS
 
 [![CI Status](http://img.shields.io/travis/charvoa/TimberiOS.svg?style=flat)](https://travis-ci.org/charvoa/TimberiOS)
