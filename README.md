@@ -20,9 +20,31 @@ it, simply add the following line to your Podfile:
 pod 'TimberiOS'
 ```
 
-## Author
+## Logged Properties
 
-charvoa, nicolas.charvoz@epitech.eu
+- [X] dt
+- [X] level
+- [X] severity
+- [X] message
+- [X] tags
+- [X]  runtime - application - class-name
+- [ ] time_ms
+- [ ] context
+- [ ] organization
+- [ ] platform (logged in `runtime - applcation - class-name`)
+- [ ] release
+- [ ] runtime (only `application - class-name` (see above) )
+- [ ] session
+- [ ] source
+- [ ] system
+- [ ] user
+- [ ] event
+- [ ] custom
+- [ ] error
+.... 
+ ## Author
+
+Nicolas Charvoz, charvoz.nicolas@gmail.com
 
 ## License
 
