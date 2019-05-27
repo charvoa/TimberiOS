@@ -1,22 +1,22 @@
 {
   "name": "TimberiOS",
-  "version": "0.1.0",
-  "summary": "A short description of TimberiOS.",
-  "description": "That is a long description",
+  "version": "1.2.0",
+  "summary": "TimberiOS is here to help you log iOS record direclty in Timber",
+  "description": "This pod is here to help you with Timber.io // Check the README.md in order to learn more about TimberiOS and Timber.io",
   "homepage": "https://github.com/charvoa/TimberiOS",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "charvoa": "nicolas.charvoz@epitech.eu"
+    "charvoa": "charvoz.nicolas@gmail.com"
   },
   "source": {
     "git": "https://github.com/charvoa/TimberiOS.git",
-    "tag": "0.1.0"
+    "tag": "1.2.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "10.3"
   },
   "source_files": "TimberiOS/Classes/**/*",
   "dependencies": {

@@ -26,7 +26,6 @@ public enum LogLevel: String {
     case emergency = "emergency"
 }
 
-
 public enum InternalLogLevel: String {
     case debugInternal
     case warnInternal
@@ -35,11 +34,12 @@ public enum InternalLogLevel: String {
 
 open class TimberLogger: NSObject {
     
-    open static let shared = TimberLogger()
+    public static let shared = TimberLogger()
     
     var apiToken:String?
     var internalLogLevel: InternalLogLevel?
-    
+    private var uniqueIdentifier: String?
+
     // MARK: Private Static variables
     private static let debugLevelArray: [LogLevel] = [.debug, .info, .notice, .warn, .error, .critical, .alert, .emergency]
     private static let warnLevelArray: [LogLevel]  = [.warn, .error, .critical, .alert, .emergency]
@@ -55,15 +55,17 @@ open class TimberLogger: NSObject {
         .emergency:"🆘"
     ]
     
-    
     private var internalLogLevelArray: [LogLevel]?
     
     private override init() {}
 
-    
-    open static func initialize(with apiToken:String, internalLogLevel: InternalLogLevel) {
+    public static func initialize(with apiToken:String,
+                                  internalLogLevel: InternalLogLevel,
+                                  uniqueIdentifier: String) {
         TimberLogger.shared.apiToken = apiToken
         TimberLogger.shared.internalLogLevel = internalLogLevel
+        TimberLogger.shared.uniqueIdentifier = uniqueIdentifier
+
         switch (internalLogLevel) {
             case .debugInternal:
                 TimberLogger.shared.internalLogLevelArray = debugLevelArray
@@ -80,10 +82,10 @@ open class TimberLogger: NSObject {
                   tags: [String],
                   message:String) {
         
-        guard type == .frame else {
-            assertionFailure("Alert endpoint feature is not yet implemented | ERROR : ALERT_LEVEL_ERROR")
-            return
-        }
+//        guard type == .frame else {
+//            assertionFailure("Alert endpoint feature is not yet implemented | ERROR : ALERT_LEVEL_ERROR")
+//            return
+//        }
         guard self.apiToken != nil else {
             assertionFailure("Could not initalize TimberLogger without apiToken | ERROR : INIT_API_TOKEN_ERROR")
             return
@@ -116,10 +118,17 @@ open class TimberLogger: NSObject {
                         "description": Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String ?? ""
                     ]
                 ]
-            ]
-        ] as [String:Any]
-        
-        
+            ],
+            "device": [
+                "identifier": TimberLogger.shared.uniqueIdentifier
+            ],
+            "user": [
+                "identifier": "accountId",
+                "phoneNumber": "+33769069025"
+            ],
+            "tags": tags
+        ] as [String: Any]
+
         if (TimberLogger.shared.internalLogLevelArray?.contains(level))! {
             let emoji:String! = TimberLogger.logLevelEmoji[level]
             let line: String = "\n--------------------\n"
@@ -130,5 +139,4 @@ open class TimberLogger: NSObject {
             print(response)
         }
     }
-    
 }

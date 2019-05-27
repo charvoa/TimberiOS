@@ -15,13 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
-        
         // TimberLogger initialization
         let apiToken = "1241_38e5e990385b0d6c:132b9d152701460851452dc85c3f4af0ce9c75d395f644d4d89673658bb61d03"
-        TimberLogger.initialize(with: apiToken, internalLogLevel: .debugInternal)
+        TimberLogger.initialize(with: apiToken,
+                                internalLogLevel: .debugInternal,
+                                uniqueIdentifier: UIDevice.current.identifierForVendor?.uuidString ?? UUID().uuidString)
         
         return true
     }
@@ -47,7 +48,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
-

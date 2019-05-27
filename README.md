@@ -42,12 +42,12 @@ $ pod install
 
 ## Logged Properties
 
-- [X] dt
-- [X] level
-- [X] severity
-- [X] message
-- [X] tags
-- [X] runtime (`application - class-name`)
+- [x] dt
+- [x] level
+- [x] severity
+- [x] message
+- [x] tags
+- [x] runtime (`application - class-name`)
 - [ ] time_ms
 - [ ] context
 - [ ] organization

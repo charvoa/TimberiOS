@@ -1,14 +1,10 @@
 use_frameworks!
+platform :ios, '10.3'
 
 target 'TimberiOS_Example' do
   pod 'TimberiOS', :path => '../'
 
   target 'TimberiOS_Tests' do
     inherit! :search_paths
-
-    pod 'Quick'
-    pod 'Nimble'
-    pod 'FBSnapshotTestCase'
-    pod 'Nimble-Snapshots'
   end
 end

@@ -19,7 +19,7 @@ extension String: ParameterEncoding {
 }
 
 open class NetworkManager {
-    open static let shared = NetworkManager()
+    public static let shared = NetworkManager()
     
     private init() {}
     
@@ -35,7 +35,7 @@ open class NetworkManager {
         
         let headers: HTTPHeaders = [
             "authorization": "Basic \(encodedToken)",
-            //"accept": "content/json",
+            "accept": "content/json",
             "content-type": "application/json"
         ]
 
@@ -44,7 +44,7 @@ open class NetworkManager {
             parameters: params,
             encoding: JSONEncoding.default,
             headers: headers)
-            .validate(contentType: ["application/json"])
+            .validate(contentType: ["text/plain"])
             .responseString { (response) in
                 completionHandler(response)
         }
