@@ -15,31 +15,31 @@ extension String: ParameterEncoding {
         request.httpBody = data(using: .utf8, allowLossyConversion: false)
         return request
     }
-    
 }
 
 open class NetworkManager {
+    
     public static let shared = NetworkManager()
     
     private init() {}
     
     
     open func request(apiToken: String,
+                      sourceIdentification: String,
                       endpoint: String,
                       method: HTTPMethod,
-//                      body:String?,
                       params: [String: Any],
                       completionHandler: @escaping (DataResponse<String>) -> ()) {
         
         let encodedToken = apiToken.toBase64()
         
         let headers: HTTPHeaders = [
-            "authorization": "Basic \(encodedToken)",
+            "authorization": String(format: "Basic %@", encodedToken),
             "accept": "content/json",
             "content-type": "application/json"
         ]
 
-        Alamofire.request("https://logs.timber.io\(endpoint)",
+        Alamofire.request("https://logs.timber.io/sources/\(sourceIdentification)/\(endpoint)",
             method: method,
             parameters: params,
             encoding: JSONEncoding.default,

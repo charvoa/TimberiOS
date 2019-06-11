@@ -11,8 +11,8 @@ import Foundation
 
 
 public enum LogType: String {
-    case frame = "/frames"
-    case alert = "/alert"
+    case frame = "frames"
+    case alert = "alert"
 }
 
 public enum LogLevel: String {
@@ -36,7 +36,8 @@ open class TimberLogger: NSObject {
     
     public static let shared = TimberLogger()
     
-    var apiToken:String?
+    var apiToken: String?
+    var sourceIdentification: String?
     var internalLogLevel: InternalLogLevel?
     private var uniqueIdentifier: String?
 
@@ -59,10 +60,12 @@ open class TimberLogger: NSObject {
     
     private override init() {}
 
-    public static func initialize(with apiToken:String,
+    public static func initialize(with apiToken: String,
+                                  sourceIdentification: String,
                                   internalLogLevel: InternalLogLevel,
                                   uniqueIdentifier: String) {
         TimberLogger.shared.apiToken = apiToken
+        TimberLogger.shared.sourceIdentification = sourceIdentification
         TimberLogger.shared.internalLogLevel = internalLogLevel
         TimberLogger.shared.uniqueIdentifier = uniqueIdentifier
 
@@ -81,13 +84,13 @@ open class TimberLogger: NSObject {
                   severity: Int,
                   tags: [String],
                   message:String) {
-        
-//        guard type == .frame else {
-//            assertionFailure("Alert endpoint feature is not yet implemented | ERROR : ALERT_LEVEL_ERROR")
-//            return
-//        }
-        guard self.apiToken != nil else {
+
+        guard let apiToken = self.apiToken else {
             assertionFailure("Could not initalize TimberLogger without apiToken | ERROR : INIT_API_TOKEN_ERROR")
+            return
+        }
+        guard let sourceIdentification = self.sourceIdentification else {
+            assertionFailure("Could not initalize TimberLogger without sourceIdentification | ERROR : INIT_SOURCE_IDENTIFICATION_ERROR")
             return
         }
         guard self.internalLogLevel != nil else {
@@ -130,12 +133,13 @@ open class TimberLogger: NSObject {
         ] as [String: Any]
 
         if (TimberLogger.shared.internalLogLevelArray?.contains(level))! {
-            let emoji:String! = TimberLogger.logLevelEmoji[level]
+            let emoji: String! = TimberLogger.logLevelEmoji[level]
             let line: String = "\n--------------------\n"
+            
             print(line + emoji + "\n" + " \(params as AnyObject)" + line)
         }
-        
-        NetworkManager.shared.request(apiToken: self.apiToken!, endpoint: type.rawValue, method: .post, params: params) { (response) in
+
+        NetworkManager.shared.request(apiToken: apiToken, sourceIdentification: sourceIdentification, endpoint: type.rawValue, method: .post, params: params) { (response) in
             print(response)
         }
     }

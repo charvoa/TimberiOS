@@ -13,9 +13,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         TimberLogger.shared.log(type: .frame, level: .emergency, severity:2, tags:["flavien", "bastien"],
                                 message: "frame/alert emergency test")
-        TimberLogger.shared.log(type: .frame, level: .error, severity:2, tags:["flavien", "bastien"],
+        TimberLogger.shared.log(type: .frame, level: .emergency, severity:2, tags:["flavien", "bastien"],
                                 message: "frame/alert emergency test")
         // Do any additional setup after loading the view, typically from a nib.
     }

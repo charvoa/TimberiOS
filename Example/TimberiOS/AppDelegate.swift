@@ -19,8 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         // TimberLogger initialization
-        let apiToken = "1241_38e5e990385b0d6c:132b9d152701460851452dc85c3f4af0ce9c75d395f644d4d89673658bb61d03"
+        let apiToken = ""
+        let sourceIdentification = ""
+
         TimberLogger.initialize(with: apiToken,
+                                sourceIdentification: sourceIdentification,
                                 internalLogLevel: .debugInternal,
                                 uniqueIdentifier: UIDevice.current.identifierForVendor?.uuidString ?? UUID().uuidString)
         
